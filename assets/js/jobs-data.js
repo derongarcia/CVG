@@ -146,6 +146,40 @@ window.JobsData = (function () {
         missingSkills: ["Usability Testing", "Survey Design", "Data Analysis"],
       },
     },
+        {
+      id: "gojek-ui-designer",
+      title: "UI Designer",
+      company: {
+        name: "Gojek",
+        logo: "assets/img/gojek.jpg",
+        brandColor: "#00aa13",
+        about: [
+          "Gojek is an on-demand multi-service platform offering ride-hailing, food delivery, and payment services across Southeast Asia.",
+          "Together with Tokopedia, Gojek forms the GoTo Group, the largest technology group in Indonesia.",
+        ],
+      },
+      location: "Jakarta",
+      workMode: "Hybrid",
+      employmentType: "Full-time",
+      experienceLevel: "Junior Level",
+      salary: { min: 8000000, max: 10000000 },
+      matchScore: 84,
+      skills: ["Figma", "UI Design", "Prototyping"],
+      description: [
+        "Design clean and consistent interfaces for Gojek services used by millions of people every day, working closely with product managers and engineers.",
+      ],
+      requirements: [
+        "Strong visual design skills and attention to detail.",
+        "Proficient in Figma and building prototypes.",
+        "Understanding of mobile design patterns.",
+        "Able to work with an existing design system.",
+      ],
+      analysis: {
+        breakdown: { skills: 88, experience: 76, education: 90 },
+        matchedSkills: ["Figma", "UI Design", "Prototyping"],
+        missingSkills: ["Design System", "Motion Design"],
+      },
+    },
   ];
 
   function clone(value) {

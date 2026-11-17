@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Company Recommendations — CVG</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+    <link rel="stylesheet" href="assets/css/jobs.css" />
+    <link rel="stylesheet" href="assets/css/companies.css" />
+  </head>
+  <body class="app">
+    <aside class="sidebar" id="sidebar">
+      <a href="index.html" class="logo sidebar__logo">CVG</a>
+
+      <nav class="sidebar__nav">
+        <a class="navItem" href="dashboard.html">
+          <svg class="navItem__icon" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="1.5" />
+            <rect x="13" y="3" width="8" height="5" rx="1.5" />
+            <rect x="3" y="13" width="8" height="8" rx="1.5" />
+            <rect x="13" y="10" width="8" height="11" rx="1.5" />
+          </svg>
+          Dashboard
+        </a>
+
+        <a class="navItem" href="my-cv.html">
+          <svg class="navItem__icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+            <path d="M14 3v5h5M9 13h6M9 17h4" />
+          </svg>
+          My CV
+        </a>
+
+        <a class="navItem" href="jobs.html">
+          <svg class="navItem__icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <rect x="2" y="7" width="20" height="13" rx="2" />
+            <path d="M9 7V5h6v2M2 12h20" />
+          </svg>
+          Job Recommendations
+        </a>
+
+        <a class="navItem navItem--active" href="companies.html">
+          <svg class="navItem__icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <path d="M3 21h18M5 21V8l7-5 7 5v13" />
+            <path d="M9 21v-5h6v5" />
+          </svg>
+          Company Recommendations
+        </a>
+
+        <a class="navItem" href="#">
+          <svg class="navItem__icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7" />
+            <circle cx="11" cy="9" r="2.4" />
+            <path d="M7.4 15.4a4.4 4.4 0 0 1 7.2 0M20 20l-3.5-3.5" />
+          </svg>
+          Personalized CV
+        </a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <a class="navItem" href="#">
+          <svg class="navItem__icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
+          </svg>
+          Settings
+        </a>
+
+        <a class="navItem" href="login.html">
+          <svg class="navItem__icon" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <path d="M16 17l5-5-5-5M21 12H9" />
+          </svg>
+          Log Out
+        </a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="main__inner main__inner--jobs">
+        <h1 class="pageHead__title">Companies For You</h1>
+        <p class="pageHead__sub">
+          Based on your skills, experience, and career interest.
+        </p>
+
+        <form class="filters" id="filters" role="search">
+          <select class="filter" name="industry" aria-label="Filter industry">
+            <option value="">Industry</option>
+          </select>
+          <select class="filter" name="location" aria-label="Filter location">
+            <option value="">Location</option>
+          </select>
+          <select class="filter" name="size" aria-label="Filter company size">
+            <option value="">Company Size</option>
+          </select>
+
+          <div class="jobSearch">
+            <input
+              class="jobSearch__input"
+              type="search"
+              name="q"
+              placeholder="Search company ..."
+              aria-label="Search company"
+              autocomplete="off"
+            />
+            <svg class="jobSearch__icon" viewBox="0 0 24 24" width="16" height="16"
+              fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3.5-3.5" />
+            </svg>
+          </div>
+        </form>
+
+        <ul class="companyList" id="companyList" aria-busy="true" aria-live="polite">
+          <li class="loading">Loading companies...</li>
+        </ul>
+      </div>
+    </main>
+
+    <script src="assets/js/jobs-ui.js"></script>
+    <script src="assets/js/companies-data.js"></script>
+    <script src="assets/js/companies.js"></script>
+  </body>
+</html>

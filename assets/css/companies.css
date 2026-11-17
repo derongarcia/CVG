@@ -1,0 +1,145 @@
+.companyList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.companyCard {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 210px;
+  align-items: start;
+  gap: 14px 28px;
+  padding: 18px 20px;
+}
+
+.companyCard__name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.companyCard__meta {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--ink-500);
+}
+
+.companyCard__match {
+  margin-top: 10px;
+}
+
+.companyCard__cta {
+  margin-top: 12px;
+}
+
+.matchPill--profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.whyTitle {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.whyList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.whyList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink-700);
+}
+
+.whyList svg {
+  margin-top: 2px;
+  flex: none;
+}
+
+
+.companyDetail {
+  margin-top: 20px;
+  padding: 28px 32px;
+}
+
+.companyDetail__head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.companyDetail__name {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.companyDetail__meta {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--ink-500);
+}
+
+.companyDetail__site {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.companyDetail__site:hover {
+  text-decoration: underline;
+}
+
+.whyCard {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+}
+
+.whyCard .whyList li {
+  font-size: 13px;
+}
+
+
+.openJob {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+
+.openJob__title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.openJob__meta {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--ink-500);
+}
+
+@media (max-width: 860px) {
+  .companyCard {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+  .companyCard__why {
+    grid-column: 2;
+  }
+  .openJob {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

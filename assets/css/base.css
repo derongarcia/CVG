@@ -93,6 +93,12 @@ a {
   width: 100%;
 }
 
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
 .pill {
   display: inline-flex;
   align-items: center;
