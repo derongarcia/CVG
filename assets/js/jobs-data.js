@@ -14,7 +14,7 @@ window.JobsData = (function () {
       title: "UI/UX Designer",
       company: {
         name: "Tokopedia",
-        logo: "",
+        logo: "assets/img/tokopedia.jpg",
         brandColor: "#03ac0e",
         about: [
           "Tokopedia is an Indonesian technology company founded in 2009 with a mission to democratize commerce through technology. Tokopedia connects consumers and merchants across Indonesia through its e-commerce platform, helping businesses of different sizes reach a wider market.",
@@ -52,7 +52,7 @@ window.JobsData = (function () {
       title: "Product Designer",
       company: {
         name: "Traveloka",
-        logo: "",
+        logo: "assets/img/traveloka.jpg",
         brandColor: "#1ba0e2",
         about: [
           "Traveloka is a Southeast Asian travel platform that helps people book flights, hotels, and activities in one app.",
@@ -85,7 +85,7 @@ window.JobsData = (function () {
       title: "UI/UX Designer",
       company: {
         name: "Shopee",
-        logo: "",
+        logo: "assets/img/shopee.jpg",
         brandColor: "#ee4d2d",
         about: [
           "Shopee is an e-commerce platform in Southeast Asia and Taiwan that offers a simple and secure shopping experience.",
@@ -118,7 +118,7 @@ window.JobsData = (function () {
       title: "UX Researcher",
       company: {
         name: "tiket.com",
-        logo: "",
+        logo: "assets/img/tiket.jpg",
         brandColor: "#0064d2",
         about: [
           "tiket.com is an Indonesian online travel agent for flights, hotels, trains, and entertainment tickets.",

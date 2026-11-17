@@ -153,6 +153,13 @@
   border-radius: 14px;
 }
 
+img.jobLogo {
+  object-fit: contain;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px;
+}
+
 .tagList {
   display: flex;
   flex-wrap: wrap;
