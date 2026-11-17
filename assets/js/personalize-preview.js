@@ -49,10 +49,12 @@
   }
 
   function render(tailored, insights) {
+    const template = tailored.template === "ats" ? "ats" : "creative";
+    const flush = template === "ats" ? "" : " previewPane__paper--flush";
     root.innerHTML = `
       <div class="finalGrid">
         <section class="previewPane">
-          <div class="previewPane__paper">${CvRender.render(tailored, "modern")}</div>
+          <div class="previewPane__paper${flush}">${CvRender.render(tailored, template)}</div>
         </section>
 
         <aside class="card insights">

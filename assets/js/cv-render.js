@@ -348,10 +348,9 @@ window.CvRender = (function () {
 
 
   function render(data, template) {
-    if (template === "ats") return ats(data);
-    if (template === "modern") return modern(data);
-    return creative(data);
+    return template === "ats" ? ats(data) : modern(data);
   }
+
 
 
   return { render, esc };

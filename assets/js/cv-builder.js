@@ -423,10 +423,13 @@
 
     renderStepper();
 
-    if (isPreview) {
-      finalPreview.innerHTML = CvRender.render(state, state.template || "creative");
+        if (isPreview) {
+      const template = state.template || "creative";
+      finalPreview.innerHTML = CvRender.render(state, template);
+      finalPreview.classList.toggle("previewPane__paper--flush", template !== "ats");
       return;
     }
+
 
     stepTitle.textContent = step.title;
     stepSubtitle.textContent = step.subtitle || "";

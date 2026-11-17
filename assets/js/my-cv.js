@@ -10,7 +10,9 @@
 
   function draw() {
     previewEl.innerHTML = CvRender.render(data, template);
+    previewEl.classList.toggle("previewPane__paper--flush", template !== "ats");
   }
+
 
   function setTemplate(next) {
     template = next;

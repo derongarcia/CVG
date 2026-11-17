@@ -177,7 +177,6 @@ window.PersonalizeData = (function () {
       });
     }
 
-    cv.template = "modern";
     return cv;
   }
 

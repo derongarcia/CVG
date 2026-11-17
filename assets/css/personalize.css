@@ -104,7 +104,14 @@
   margin-top: 8px;
   padding: 36px 40px 40px;
   overflow: hidden;
+  min-height: 420px;
 }
+
+.resultWrap[aria-busy="true"]::before,
+.resultWrap[aria-busy="true"]::after {
+  display: none;
+}
+
 
 .resultWrap::before,
 .resultWrap::after {
