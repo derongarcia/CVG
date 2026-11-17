@@ -1,0 +1,296 @@
+.pageHead__sub--ok {
+  color: var(--success);
+}
+
+/* ======== KARTU JOB RINGKAS ======== */
+.miniJob {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 14px 18px;
+}
+
+.miniJob__title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.miniJob__company {
+  font-size: 11px;
+  color: var(--ink-500);
+}
+
+/* ======== KARTU SARAN ======== */
+.sugCard {
+  margin-top: 16px;
+  padding: 20px;
+}
+
+.sugCard__title {
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sugGroup {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.sugGroup + .sugGroup {
+  margin-top: 14px;
+}
+
+.sugGroup__title {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sugLabel {
+  margin-bottom: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.sugText {
+  margin-bottom: 12px;
+  padding-left: 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink-700);
+  position: relative;
+}
+
+.sugText::before {
+  content: "•";
+  position: absolute;
+  left: 2px;
+}
+
+.sugText--new {
+  color: var(--ink-900);
+}
+
+.sugOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 5px 0;
+  font-size: 12px;
+  color: var(--ink-700);
+  cursor: pointer;
+}
+
+.sugOption input {
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+  accent-color: var(--primary);
+  flex: none;
+  cursor: pointer;
+}
+
+.sugFoot {
+  margin-top: 18px;
+}
+
+/* ======== HALAMAN HASIL (BEFORE / AFTER) ======== */
+.resultWrap {
+  position: relative;
+  margin-top: 8px;
+  padding: 36px 40px 40px;
+  overflow: hidden;
+}
+
+.resultWrap::before,
+.resultWrap::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.resultWrap::before {
+  top: -120px;
+  right: -90px;
+  width: 300px;
+  height: 300px;
+  background: #5b6ad0;
+}
+
+.resultWrap::after {
+  top: 20px;
+  right: -140px;
+  width: 260px;
+  height: 260px;
+  background: rgba(209, 213, 230, 0.75);
+}
+
+.resultHead {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+}
+
+.resultHead__title {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.resultHead__sub {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--ink-500);
+}
+
+.diffGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+.diffCard {
+  min-height: 230px;
+  padding: 22px 24px;
+}
+
+.diffCard__title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.diffCard__title--after {
+  color: var(--primary);
+}
+
+.diffCard__section {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.diffCard__section--after {
+  color: var(--primary);
+}
+
+.diffItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+  font-size: 13px;
+  color: var(--ink-700);
+}
+
+.diffItem--out {
+  color: var(--ink-400);
+}
+
+.diffItem svg {
+  flex: none;
+}
+
+.diffFoot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.diffFoot .btn {
+  padding: 13px 20px;
+}
+
+.diffNote {
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--ink-400);
+}
+
+/* ======== HALAMAN PREVIEW AKHIR ======== */
+.finalGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 24px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.insights {
+  padding: 20px;
+}
+
+.insights__title {
+  margin-bottom: 16px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.insight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.ring--sm {
+  width: 64px;
+  height: 64px;
+  flex: none;
+}
+
+.ring--sm .ring__num {
+  font-size: 15px;
+}
+
+.insight__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.insight__value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.insights__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+@media (max-width: 1000px) {
+  .finalGrid,
+  .diffGrid,
+  .diffFoot {
+    grid-template-columns: 1fr;
+  }
+  .diffFoot {
+    gap: 12px;
+  }
+}
+
+
+@media print {
+  .insights,
+  .backLink {
+    display: none !important;
+  }
+  .finalGrid {
+    display: block;
+  }
+}

@@ -55,7 +55,6 @@
   align-items: start;
 }
 
-/* ---- Kolom kiri ---- */
 .editPane__title {
   margin-bottom: 16px;
   font-size: 17px;
@@ -122,6 +121,7 @@
   margin-top: 16px;
 }
 
+/* ======== TEMPLATE: CREATIVE ======== */
 .cv--creative {
   font-size: 11px;
   color: var(--ink-900);
@@ -237,6 +237,7 @@
   border-radius: var(--radius-pill);
 }
 
+/* ======== TEMPLATE: ATS ======== */
 .cv--ats {
   font-size: 10.5px;
   color: var(--ink-900);
@@ -301,6 +302,114 @@
   color: var(--ink-700);
   white-space: nowrap;
 }
+
+/* ======== TEMPLATE: MODERN ======== */
+.cv--modern {
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  font-size: 10.5px;
+  color: var(--ink-900);
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.cvm__side {
+  padding: 24px 18px;
+  background: #1b1f4b;
+  color: #e6e8f5;
+}
+
+.cvm__photo {
+  display: block;
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a2f63;
+  border: 3px solid #e6e8f5;
+}
+
+.cvm__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 9px;
+  word-break: break-word;
+}
+
+.cvm__sideBlock {
+  margin-top: 22px;
+}
+
+.cvm__sideTitle {
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cvm__sideBlock ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 9.5px;
+  color: #c3c7e4;
+}
+
+.cvm__body {
+  padding: 26px 24px;
+}
+
+.cvm__name {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.cvm__role {
+  margin-top: 1px;
+  font-size: 11px;
+  color: var(--ink-700);
+}
+
+.cvm__section {
+  margin-top: 16px;
+}
+
+.cvm__title {
+  padding-bottom: 3px;
+  margin-bottom: 8px;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink-300);
+}
+
+.cvm__item {
+  margin-bottom: 9px;
+}
+
+.cvm__strong {
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.cvm__text {
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--ink-700);
+}
+
+.cvm__meta {
+  margin-top: 1px;
+  font-size: 9.5px;
+  color: var(--ink-500);
+}
+
 
 @media (max-width: 900px) {
   .cvLayout {

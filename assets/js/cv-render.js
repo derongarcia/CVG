@@ -244,10 +244,115 @@ window.CvRender = (function () {
       </article>`;
   }
 
+    /* ---------------- TEMPLATE: MODERN ---------------- */
+  function modern(data) {
+    const p = data.personal || {};
+
+    const contacts = [p.email, p.linkedin, p.location, p.phone].filter(Boolean);
+
+    function block(title, body) {
+      if (!body) return "";
+      return `<section class="cvm__section">
+                <h3 class="cvm__title">${esc(title)}</h3>
+                ${body}
+              </section>`;
+    }
+
+    function sideBlock(title, items) {
+      if (!items || items.length === 0) return "";
+      return `<div class="cvm__sideBlock">
+                <h3 class="cvm__sideTitle">${esc(title)}</h3>
+                <ul>${items.map(function (t) {
+                  return `<li>${esc(t)}</li>`;
+                }).join("")}</ul>
+              </div>`;
+    }
+
+    return `
+      <article class="cv cv--modern">
+        <aside class="cvm__side">
+          ${
+            p.photo
+              ? `<img class="cvm__photo" src="${esc(p.photo)}" alt=""
+                   onerror="this.style.visibility='hidden'">`
+              : '<div class="cvm__photo"></div>'
+          }
+          <ul class="cvm__contacts">
+            ${contacts.map(function (c) {
+              return `<li>${esc(c)}</li>`;
+            }).join("")}
+          </ul>
+          ${sideBlock("Skills", data.skills)}
+          ${sideBlock("Languages", (data.languages || []).map(function (l) {
+            return l.language;
+          }).filter(Boolean))}
+        </aside>
+
+        <div class="cvm__body">
+          <h2 class="cvm__name">${esc(p.fullName)}</h2>
+          <p class="cvm__role">${esc(p.headline)}</p>
+
+          ${block("Professional Summary",
+            p.summary ? `<p class="cvm__text">${esc(p.summary)}</p>` : "")}
+
+          ${block("Education", isFilled(data.education)
+            ? data.education.map(function (item) {
+                return `<div class="cvm__item">
+                          <p class="cvm__strong">${esc(item.institution)}</p>
+                          <p class="cvm__text">${esc(item.degree)}${
+                            item.field ? " in " + esc(item.field) : ""
+                          }</p>
+                          <p class="cvm__meta">${range(item.startDate, item.endDate)}${
+                            item.gpa ? " | GPA " + esc(item.gpa) : ""
+                          }</p>
+                        </div>`;
+              }).join("")
+            : "")}
+
+          ${block("Experience", isFilled(data.experience)
+            ? data.experience.map(function (item) {
+                return `<div class="cvm__item">
+                          <p class="cvm__strong">${esc(item.position)}${
+                            item.company ? " - " + esc(item.company) : ""
+                          }</p>
+                          <p class="cvm__meta">${range(item.startDate, item.endDate)}</p>
+                          <p class="cvm__text">${esc(item.description)}</p>
+                        </div>`;
+              }).join("")
+            : "")}
+
+          ${block("Projects", isFilled(data.projects)
+            ? data.projects.map(function (item) {
+                return `<div class="cvm__item">
+                          <p class="cvm__strong">${esc(item.name)}</p>
+                          <p class="cvm__text">${esc(item.position)}</p>
+                          <p class="cvm__text">${esc(item.description)}</p>
+                        </div>`;
+              }).join("")
+            : "")}
+
+          ${block("Certifications", isFilled(data.certifications)
+            ? data.certifications.map(function (item) {
+                return `<div class="cvm__item">
+                          <p class="cvm__text">${esc(item.name)}${
+                            item.organization ? " - " + esc(item.organization) : ""
+                          }</p>
+                          <p class="cvm__meta">${esc(formatMonth(item.issueDate))}</p>
+                        </div>`;
+              }).join("")
+            : "")}
+        </div>
+      </article>`;
+  }
+
+
 
   function render(data, template) {
-    return template === "ats" ? ats(data) : creative(data);
+    if (template === "ats") return ats(data);
+    if (template === "modern") return modern(data);
+    return creative(data);
   }
+
 
   return { render, esc };
 })();

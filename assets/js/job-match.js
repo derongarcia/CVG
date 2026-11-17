@@ -138,9 +138,10 @@
         </section>
       </div>
 
-      <button class="btn btn--primary btn--block matchCta" type="button" id="improveBtn">
+      <a class="btn btn--primary btn--block matchCta"
+        href="personalize.html?id=${encodeURIComponent(job.id)}">
         Show Improve Suggestion →
-      </button>`;
+      </a>`;
 
     animate();
   }
