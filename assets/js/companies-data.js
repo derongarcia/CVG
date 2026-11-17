@@ -166,6 +166,7 @@ window.CompaniesData = (function () {
 
   /* ---------- Fungsi publik ---------- */
   function filters() {
+    if (Api.isLive()) return Api.companies.filters();
     return respond({
       industries: unique(COMPANIES.map(function (c) { return c.industry; })),
       locations: unique(COMPANIES.map(function (c) { return c.location; })),
@@ -174,6 +175,7 @@ window.CompaniesData = (function () {
   }
 
   function list(params) {
+    if (Api.isLive()) return Api.companies.list(params);
     const f = params || {};
     const result = COMPANIES.filter(function (c) { return matchesFilter(c, f); })
       .sort(function (a, b) { return b.profileMatch - a.profileMatch; })
@@ -182,6 +184,7 @@ window.CompaniesData = (function () {
   }
 
   function get(id) {
+    if (Api.isLive()) return Api.companies.get(id);
     const company = COMPANIES.find(function (c) { return c.id === id; });
     return company ? respond(company) : notFound();
   }

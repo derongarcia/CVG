@@ -251,6 +251,7 @@ window.JobsData = (function () {
   }
 
   function filters() {
+    if (Api.isLive()) return Api.jobs.filters();
     return respond({
       locations: unique("location"),
       experienceLevels: unique("experienceLevel"),
@@ -259,6 +260,7 @@ window.JobsData = (function () {
   }
 
   function list(params) {
+    if (Api.isLive()) return Api.jobs.list(params);
     const f = params || {};
     const result = JOBS.filter(function (job) { return matchesFilter(job, f); })
       .sort(function (a, b) { return b.matchScore - a.matchScore; })
@@ -267,6 +269,7 @@ window.JobsData = (function () {
   }
 
   function get(id) {
+    if (Api.isLive()) return Api.jobs.get(id);
     const job = find(id);
     if (!job) return notFound();
 
@@ -276,6 +279,7 @@ window.JobsData = (function () {
   }
 
   function analyze(id) {
+    if (Api.isLive()) return Api.jobs.analyze(id);
     const job = find(id);
     if (!job) return notFound();
 

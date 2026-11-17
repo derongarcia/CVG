@@ -98,19 +98,27 @@
     submitBtn.textContent = "Creating account...";
 
     try {
-      // TODO (langkah 4): ganti dengan Api.register(values)
-      await new Promise(function (resolve) {
-        setTimeout(resolve, 600);
-      });
-
+      if (Api.isLive()) {
+        await Api.auth.login(values);
+      } else {
+        await new Promise(function (resolve) { setTimeout(resolve, 600); });
+      }
       window.location.href = "dashboard.html";
     } catch (error) {
-      alertBox.textContent = "Gagal membuat akun. Coba lagi sebentar.";
-      alertBox.hidden = false;
+      if (error.errors) {
+        Object.keys(error.errors).forEach(function (name) {
+          const list = error.errors[name];
+          setFieldError(name, Array.isArray(list) ? list[0] : list);
+        });
+      } else {
+        alertBox.textContent = error.message || "Gagal masuk. Coba lagi sebentar.";
+        alertBox.hidden = false;
+      }
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Sign Up";
+      submitBtn.textContent = "Log in";
     }
+
   });
 
   FIELDS.forEach(function (name) {

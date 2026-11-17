@@ -74,20 +74,27 @@
     submitBtn.textContent = "Logging in...";
 
     try {
-      // TODO (langkah 4): ganti blok ini dengan Api.login(values)
-      // yang memanggil endpoint backend dan membaca respons JSON-nya.
-      await new Promise(function (resolve) {
-        setTimeout(resolve, 600);
-      });
-
+      if (Api.isLive()) {
+        await Api.auth.login(values);
+      } else {
+        await new Promise(function (resolve) { setTimeout(resolve, 600); });
+      }
       window.location.href = "dashboard.html";
     } catch (error) {
-      alertBox.textContent = "Gagal masuk. Coba lagi sebentar.";
-      alertBox.hidden = false;
+      if (error.errors) {
+        Object.keys(error.errors).forEach(function (name) {
+          const list = error.errors[name];
+          setFieldError(name, Array.isArray(list) ? list[0] : list);
+        });
+      } else {
+        alertBox.textContent = error.message || "Gagal masuk. Coba lagi sebentar.";
+        alertBox.hidden = false;
+      }
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Log in";
     }
+
   });
 
   ["email", "password"].forEach(function (name) {

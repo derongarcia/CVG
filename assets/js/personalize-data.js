@@ -106,6 +106,7 @@ window.PersonalizeData = (function () {
 
   /* ---------- Fungsi utama ---------- */
   async function get(jobId) {
+    if (Api.isLive()) return Api.jobs.suggestions(jobId);
     const analysis = await JobsData.analyze(jobId);
     const cv = CvStore.load();
 

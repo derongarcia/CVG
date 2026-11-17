@@ -1,0 +1,172 @@
+.settingsCard {
+  margin-top: 20px;
+  padding: 28px 32px;
+}
+
+.settingsCard__title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.settingsCard__sub {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--ink-500);
+}
+
+/* ======== FOTO PROFIL ======== */
+.photoRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 24px 0 20px;
+}
+
+.photoRow__img {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface-alt);
+  flex: none;
+}
+
+.photoRow__btn {
+  padding: 0 0 2px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--primary);
+  cursor: pointer;
+}
+
+.photoRow__input {
+  display: none;
+}
+
+/* ======== PREFERENCES ======== */
+.prefSection {
+  margin-top: 32px;
+}
+
+.prefRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+}
+
+.prefRow + .prefRow {
+  border-top: 1px solid var(--border);
+}
+
+.prefRow__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  color: var(--ink-700);
+  flex: none;
+}
+
+.prefRow__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.prefRow__title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prefRow__desc {
+  margin-top: 1px;
+  font-size: 11px;
+  color: var(--ink-500);
+}
+
+/* ======== TOGGLE ======== */
+.switch {
+  position: relative;
+  width: 42px;
+  height: 22px;
+  flex: none;
+}
+
+.switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.switch__track {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--ink-300);
+  border-radius: var(--radius-pill);
+  transition: background-color 0.15s ease;
+  pointer-events: none;
+}
+
+.switch__track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+}
+
+.switch input:checked + .switch__track {
+  background: var(--primary);
+}
+
+.switch input:checked + .switch__track::after {
+  transform: translateX(20px);
+}
+
+.switch input:focus-visible + .switch__track {
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+/* ======== FOOTER ======== */
+.settingsFoot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.saveStatus {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.saveStatus--ok {
+  color: var(--success);
+}
+
+.saveStatus--err {
+  color: var(--danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch__track,
+  .switch__track::after {
+    transition: none;
+  }
+}
