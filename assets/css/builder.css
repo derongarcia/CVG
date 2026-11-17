@@ -1,0 +1,354 @@
+/* Elemen dengan atribut hidden selalu disembunyikan,
+   walaupun class-nya memberi display:flex atau grid */
+[hidden] {
+  display: none !important;
+}
+
+.builderHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.builderHead__title {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.builderHead__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.builderStep {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.progress {
+  margin-top: 4px;
+}
+
+.progress__pct {
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: var(--ink-500);
+  text-align: right;
+}
+
+.progress__track {
+  height: 4px;
+  overflow: hidden;
+  background: var(--border);
+  border-radius: var(--radius-pill);
+}
+
+.progress__bar {
+  width: 0;
+  height: 100%;
+  background: var(--primary);
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.builder {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 460px);
+  gap: 40px;
+  align-items: start;
+  margin-top: 32px;
+}
+
+.builder--preview {
+  grid-template-columns: 1fr;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 4px;
+  font: inherit;
+  text-align: left;
+  color: var(--ink-700);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.stepItem__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 50%;
+  flex: none;
+}
+
+.stepItem__label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stepItem:hover .stepItem__label {
+  color: var(--primary);
+}
+
+.stepItem--active {
+  color: var(--primary);
+}
+
+.stepItem--active .stepItem__num {
+  background: #bcd9f2;
+  color: var(--primary-700);
+}
+
+.formCard {
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.formCard__title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.formCard__subtitle {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--ink-500);
+}
+
+.stepBody {
+  margin-top: 16px;
+}
+
+.formField {
+  margin-bottom: 12px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-700);
+}
+
+.formLabel__opt {
+  font-weight: 400;
+  color: var(--ink-400);
+}
+
+.formInput {
+  width: 100%;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink-900);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.formInput.is-invalid {
+  border-color: var(--danger);
+}
+
+.formInput--area {
+  min-height: 84px;
+  resize: vertical;
+}
+
+.formError {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--danger);
+}
+
+.formError:empty {
+  display: none;
+}
+
+.formHint {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--ink-400);
+}
+
+.formGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.entry + .entry {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--border);
+}
+
+.entry__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.entry__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.entry__remove {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--danger);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.addBtn {
+  margin-top: 8px;
+}
+
+.subSection {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.subLabel {
+  margin: 12px 0 6px;
+  font-size: 12px;
+  color: var(--ink-700);
+}
+
+.searchBox {
+  position: relative;
+}
+
+.searchBox .formInput {
+  padding-right: 34px;
+}
+
+.searchBox__icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: var(--ink-400);
+  pointer-events: none;
+}
+
+.chipList--edit {
+  margin-top: 10px;
+}
+
+.chipList--edit:empty {
+  display: none;
+}
+
+.chip--removable {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  background: #cfe3f7;
+}
+
+.chip__remove {
+  display: inline-flex;
+  padding: 0;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--ink-700);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.chip__remove:hover {
+  color: var(--danger);
+}
+
+.formCard__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.linkBtn {
+  padding: 6px 0;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-700);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.linkBtn:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 960px) {
+  .builder {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .stepper {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .stepItem {
+    width: auto;
+  }
+
+  .stepItem__label {
+    display: none;
+  }
+  .stepItem--active .stepItem__label {
+    display: inline;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .formGrid2 {
+    grid-template-columns: 1fr;
+  }
+}
